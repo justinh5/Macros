@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval" stroke="#6E37F6" stroke-width="2" cx="8.14254858" cy="8.14254858" r="8.14254858"></circle>
+            <rect id="Rectangle" fill="#6E37F6" x="2.52739958" y="7.30027623" width="11.230298" height="1.6845447" rx="0.84227235"></rect>
+            <path d="M3.36967193,7.30027623 L12.9154252,7.30027623 C13.3805994,7.30027623 13.7576976,7.67737441 13.7576976,8.14254858 L13.7576976,8.14254858 C13.7576976,8.60772276 13.3805994,8.98482093 12.9154252,8.98482093 L3.36967193,8.98482093 C2.90449776,8.98482093 2.52739958,8.60772276 2.52739958,8.14254858 L2.52739958,8.14254858 C2.52739958,7.67737441 2.90449776,7.30027623 3.36967193,7.30027623 Z" id="Rectangle-Copy" fill="#6E37F6" transform="translate(8.142549, 8.142549) rotate(-90.000000) translate(-8.142549, -8.142549) "></path>
+        </g>
+    </g>
+</svg>
