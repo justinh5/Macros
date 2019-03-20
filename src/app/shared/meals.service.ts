@@ -19,15 +19,17 @@ export class MealsService {
     this.meals.push(newMeal);
   }
 
-  getMealById(albumId: string){
-    // return this.database.object('meals/' + mealId);
+  getMealById(mealId: string){
+    return this.database.object('meals/' + mealId);
   }
 
   updateMeal(localUpdatedMeal){
-    // var mealEntryInFirebase = this.getMealById(localUpdatedMeal.$key);
-    // mealEntryInFirebase.update({title: localUpdatedAlbum.title,
-    //                             artist: localUpdatedAlbum.artist,
-    //                             description: localUpdatedAlbum.description});
+    let mealEntryInFirebase = this.getMealById(localUpdatedMeal.$key);
+    mealEntryInFirebase.update({description: localUpdatedMeal.description});
+  }
+
+  deleteMeal(item) {
+    this.getMealById(item.$key).remove();
   }
 
 }

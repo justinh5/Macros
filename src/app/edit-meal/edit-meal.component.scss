@@ -1,0 +1,33 @@
+
+@import '../../variables';
+@import '../../mixins';
+
+.save-bttn {
+  background-color: $technipurple;
+  color: white;
+  height: $meal-input-height;
+  border: 0px solid transparent;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cancel-bttn {
+  border: 0px solid transparent;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.meal-input {
+  width: 50%;
+  height: $meal-input-height;
+  border-radius: 3px;
+  border: 2px solid $charcoal;
+  padding-left: 10px;
+}

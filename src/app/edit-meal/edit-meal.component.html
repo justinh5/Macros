@@ -1,0 +1,6 @@
+
+<div *ngIf="childSelectedMeal">
+  <input class="meal-input" [(ngModel)]="childSelectedMeal.description">
+  <button class="save-bttn" type="button" name="button" (click)="renameItem(childSelectedMeal)">Save</button>
+  <button class="cancel-bttn" type="button" name="button" (click)="cancelItem()">Cancel</button>
+</div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -10,6 +11,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AboutComponent } from './about/about.component';
 import { MealsComponent } from './meals/meals.component';
 import { MealDetailComponent } from './meal-detail/meal-detail.component';
+import { EditMealComponent } from './edit-meal/edit-meal.component';
 
 
 export const firebaseConfig = {
@@ -25,10 +27,12 @@ export const firebaseConfig = {
     NavMenuComponent,
     AboutComponent,
     MealsComponent,
-    MealDetailComponent
+    MealDetailComponent,
+    EditMealComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule

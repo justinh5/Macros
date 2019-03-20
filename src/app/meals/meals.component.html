@@ -9,28 +9,46 @@
         <p>new folder</p>
       </div>
     </a>
-    <a href="#">
-      <img class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
-    </a>
   </div>
 </div>
 
 <div class="folder-group">
-  <img src="./assets/images/folder-regular.svg" alt="folder">
-  Usual snacks
+  <div class="title-group">
+    <img class="folder-icon" src="./assets/images/folder-regular.svg" alt="folder">
+    Usual snacks
+  </div>
+  <div class="edit-group">
+    <img class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
+    <img class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete">
+  </div>
 </div>
 <div class="folder-group">
-  <img src="./assets/images/folder-regular.svg" alt="folder">
-  Lunches
+  <div class="title-group">
+    <img class="folder-icon" src="./assets/images/folder-regular.svg" alt="folder">
+    Lunches
+  </div>
+  <div class="edit-group">
+    <img class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
+    <img class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete">
+  </div>
 </div>
 
-<div class="meal-item" *ngFor="let meal of meals | async">
-  {{meal.description}}
+<div class="meal-item" *ngFor="let meal of meals">
+  <div class="description" *ngIf="selectedMeal !== meal">
+    {{meal.description}}
+  </div>
+  <div class="edit-input-group" *ngIf="selectedMeal === meal">
+    <app-edit-meal [childSelectedMeal]="selectedMeal" (editingDone)="finishedEditing()"></app-edit-meal>
+  </div>
+  <div class="edit-group">
+    <img (click)="selectEdit(meal)" class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
+    <img (click)="deleteItem(meal)" class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete">
+  </div>
 </div>
 
-<div class="new-meal-container" *ngIf="editOn === true">
-  <input class="meal-input" type="text" name="" value="" placeholder="enter meal description">
-  <button class="save-bttn" type="button" name="button" (click)="saveItem()">Save</button>
+<div class="new-meal-container" *ngIf="addOn === true">
+  <input #newDescription class="meal-input" type="text" name="" value="" placeholder="enter meal description">
+  <button class="save-bttn" type="button" name="button" (click)="saveNewItem(newDescription.value)">Save</button>
   <button class="cancel-bttn" type="button" name="button" (click)="cancelItem()">Cancel</button>
 </div>
 

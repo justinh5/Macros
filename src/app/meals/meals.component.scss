@@ -39,37 +39,47 @@
 
 .folder-group {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 1.3em;
   width: 100%;
-  border: 3px solid transparent;
 
-  img {
+  .title-group {
+    display: flex;
+    align-items: center;
+    padding: 0em 1em;
+    border: 3px solid transparent;
+
+    &:hover {
+      border: 3px solid $technipurple;
+      border-radius: 5px;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+  }
+
+  .folder-icon {
     width: 40px;
-    margin: 0em 1em;
-  }
-
-  &:hover {
-    border: 3px solid $technipurple;
-    border-radius: 5px;
-    transition: 0.5s;
-    cursor: pointer;
+    margin-right: 1em;
   }
 }
 
-
-.edit-icon {
-  margin-left: 5em;
-  width: 25px;
-}
 
 a {
   color: black;
 }
 
 .meal-item {
-  margin: 1em 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 1em 0em;
   font-size: 1em;
+
+  .description {
+    padding-left: 3em;
+  }
 
   &:hover {
     cursor: pointer;
@@ -107,7 +117,29 @@ a {
 .cancel-bttn {
   border: 0px solid transparent;
   background-color: transparent;
-  
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.edit-input-group {
+  flex-grow: 1;
+  padding-left: 3em;
+}
+
+.edit-icon {
+  margin-right: 5px;
+  height: 18px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.delete-icon {
+  height: 18px;
+
   &:hover {
     cursor: pointer;
   }
