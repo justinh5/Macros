@@ -24,6 +24,17 @@
   Lunches
 </div>
 
-<div>
+<div class="meal-item" *ngFor="let meal of meals | async">
+  {{meal.description}}
+</div>
 
+<div class="new-meal-container" *ngIf="editOn === true">
+  <input class="meal-input" type="text" name="" value="" placeholder="enter meal description">
+  <button class="save-bttn" type="button" name="button" (click)="saveItem()">Save</button>
+  <button class="cancel-bttn" type="button" name="button" (click)="cancelItem()">Cancel</button>
+</div>
+
+<div class="add-item" (click)="addNewItem()">
+  <img class="add-icon" src="./assets/images/plus.svg" alt="add">
+  Add new meal
 </div>

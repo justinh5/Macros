@@ -1,0 +1,82 @@
+{ "meals": [
+    {
+        "description": "Breakfast1 - Omlette + fruit",
+        "path": null,
+        "items": [
+          {
+            "description": "Egg, whole, cooked, fried",
+            "qty": 2,
+            "measurement": "large",
+            "measurements": [
+              {
+                "name": "large",
+                "calories": 233,
+                "fat": 0,
+                "carbs": 2,
+                "protein": 12
+              }
+            ]
+          },
+          {
+            "description": "Mushrooms, shiitake, stir-fried",
+            "qty": 0.5,
+            "measurement": "cup sliced",
+            "measurements": [
+              {
+                "name": "cup sliced",
+                "calories": 50,
+                "fat": 0,
+                "carbs": 0,
+                "protein": 2
+              },
+              {
+                "name": "cup whole",
+                "calories": 50,
+                "fat": 0,
+                "carbs": 0,
+                "protein": 2
+              },
+              {
+                "name": "piece whole",
+                "calories": 50,
+                "fat": 0,
+                "carbs": 0,
+                "protein": 2
+              }
+            ]
+          },
+          {
+            "description": "Cheese, cheddar, sharp, sliced",
+            "qty": 1,
+            "measurement": "slice (2/3 oz)",
+            "measurements": [
+              {
+                "name": "slice (2/3 oz)",
+                "calories": 50,
+                "fat": 0,
+                "carbs": 0,
+                "protein": 2
+              },
+              {
+                "name": "slice (3/4 oz)",
+                "calories": 50,
+                "fat": 0,
+                "carbs": 0,
+                "protein": 2
+              },
+              {
+                "name": "slice (1 oz)",
+                "calories": 50,
+                "fat": 0,
+                "carbs": 0,
+                "protein": 2
+              }
+            ]
+          }
+        ]
+    },
+    {
+
+    }
+  ]
+}

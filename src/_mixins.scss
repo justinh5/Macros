@@ -1,0 +1,17 @@
+
+
+@mixin add-item {
+  display: flex;
+  align-items: center;
+  margin: 2em 1.5em;
+  font-size: 1.2em;
+
+  .add-icon {
+    width: 30px;
+    margin-right: 1em;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

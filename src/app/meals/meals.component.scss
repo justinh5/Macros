@@ -1,5 +1,6 @@
 
 @import '../../variables';
+@import '../../mixins';
 
 .table-header {
   display: flex;
@@ -64,4 +65,31 @@
 
 a {
   color: black;
+}
+
+.meal-item {
+  margin: 1em 3em;
+  font-size: 1em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.add-item {
+  @include add-item;
+}
+
+.new-meal-container {
+  margin-left: 3em;
+}
+
+.meal-input {
+  width: 50%;
+  height: 30px;
+}
+
+.save-bttn {
+  background-color: $technipurple;
+  color: white;
 }
