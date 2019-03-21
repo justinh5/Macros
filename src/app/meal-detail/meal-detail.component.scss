@@ -1,6 +1,5 @@
 
 @import '../styles/variables';
-@import '../styles/mixins';
 
 * {
   color: $dark-charcoal;
@@ -8,47 +7,4 @@
 
 #table-container {
   margin-top: 5em;
-}
-
-#item-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-tr {
-  border-bottom: 1px solid $charcoal;
-  height: 3em;
-}
-
-.header-border {
-  border-bottom: 2px solid $charcoal;
-}
-
-.left-align {
-  text-align: left;
-}
-
-.center-align {
-  text-align: center;
-}
-
-.edit-group {
-  text-align: right;
-}
-
-.edit-icon {
-  margin-right: 5px;
-  height: 18px;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.delete-icon {
-  height: 18px;
-
-  &:hover {
-    cursor: pointer;
-  }
 }

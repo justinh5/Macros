@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
@@ -14,6 +15,10 @@ import { MealsComponent } from './meals/meals.component';
 import { MealDetailComponent } from './meal-detail/meal-detail.component';
 import { EditMealComponent } from './edit-meal/edit-meal.component';
 import { BackBttnComponent } from './meal-detail/back-bttn/back-bttn.component';
+import { SearchFieldComponent } from './meal-detail/search-field/search-field.component';
+import { ItemTableComponent } from './meal-detail/item-table/item-table.component';
+import { AddItemBttnComponent } from './meal-detail/add-item-bttn/add-item-bttn.component';
+import { NewRowComponent } from './meal-detail/new-row/new-row.component';
 
 
 export const firebaseConfig = {
@@ -31,10 +36,15 @@ export const firebaseConfig = {
     MealsComponent,
     EditMealComponent,
     MealDetailComponent,
-    BackBttnComponent
+    BackBttnComponent,
+    SearchFieldComponent,
+    ItemTableComponent,
+    AddItemBttnComponent,
+    NewRowComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),

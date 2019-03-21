@@ -3,29 +3,7 @@
 
 <div id="table-container">
   <h1>{{displayMeal?.description}}</h1>
-  <table id="item-table">
-    <tr class="header-border">
-      <th class="left-align">Description</th>
-      <th class="center-align">Measurement</th>
-      <th class="center-align">Qty</th>
-    </tr>
-    <tr>
-      <td>Eggs, whole, fried</td>
-      <td class="center-align">large</td>
-      <td class="center-align">2</td>
-      <td class="edit-group">
-        <img class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
-        <img class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete">
-      </td>
-    </tr>
-    <tr>
-      <td>Mushrooms, Shiitake</td>
-      <td class="center-align">cup sliced</td>
-      <td class="center-align">0.5</td>
-      <td class="edit-group">
-        <img class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
-        <img class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete">
-      </td>
-    </tr>
-  </table>
+  <app-item-table [(list)]="list"></app-item-table>
+  <app-new-row *ngIf="addOn" (additionDone)="additionDone()"></app-new-row>
+  <app-add-item-bttn (click)="addNewItem()"></app-add-item-bttn>
 </div>

@@ -2,6 +2,12 @@
 @import '../styles/variables';
 @import '../styles/mixins';
 
+
+#meal-list-container {
+  padding-left: 1em;
+}
+
+
 .table-header {
   display: flex;
   justify-content: space-between;
@@ -47,7 +53,7 @@
   .title-group {
     display: flex;
     align-items: center;
-    padding: 0em 1em;
+    padding: 0em 0.3em;
     border: 3px solid transparent;
 
     &:hover {
@@ -78,7 +84,7 @@ a {
   font-size: 1em;
 
   .description {
-    padding-left: 3em;
+    padding-left: 2em;
   }
 
   &:hover {

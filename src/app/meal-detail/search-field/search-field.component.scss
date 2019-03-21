@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+#description-input {
+  height: $meal-input-height;
+  width: 100%;
+}
