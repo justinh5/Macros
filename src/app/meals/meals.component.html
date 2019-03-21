@@ -34,7 +34,7 @@
 </div>
 
 <div class="meal-item" *ngFor="let meal of meals">
-  <div class="description" *ngIf="selectedMeal !== meal">
+  <div class="description" *ngIf="selectedMeal !== meal" (click)="goToDetailPage(meal)">
     {{meal.description}}
   </div>
   <div class="edit-input-group" *ngIf="selectedMeal === meal">

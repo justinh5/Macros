@@ -1,6 +1,6 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent }   from './about/about.component';
+import { AboutComponent }   from './shared/about/about.component';
 import { MealsComponent }   from './meals/meals.component';
 import { MealDetailComponent }   from './meal-detail/meal-detail.component';
 
@@ -15,7 +15,7 @@ const appRoutes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'meals/:id',
+    path: 'meal/:id',
     component: MealDetailComponent
   }
 ];
