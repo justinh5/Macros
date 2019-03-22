@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SearchModalComponent } from '../search-modal/search-modal.component';
 import { MatDialog, MatDialogConfig } from "@angular/material";
+import { UsdaDbService } from '../../services/usda-db.service';
 
 @Component({
   selector: 'app-new-row',
@@ -11,9 +12,9 @@ export class NewRowComponent implements OnInit {
 
   @Output() additionDone = new EventEmitter();
 
-  ndbno: string;
+  description: string;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private usdaService: UsdaDbService) {
     this.ndbno = null;
   }
 
@@ -30,12 +31,17 @@ export class NewRowComponent implements OnInit {
 
   openModal() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = "some dataaa";
+    // dialogConfig.data = "some dataaa";
     let dialogRef = this.dialog.open(SearchModalComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(value => {
-      console.log(`Dialog sent: ${value}`);
+    dialogRef.afterClosed().subscribe(id => {
+      if(id)
+        populateRow(id);
     });
+  }
+
+  populateRow(ndbno: string) {
+
   }
 
 }

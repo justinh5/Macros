@@ -1,5 +1,9 @@
 <div class="row">
-  <input id="description-input" class="col1" type="text" placeholder="search for a food item..." (click)="openModal()">
+  <input id="description-input" class="col1"
+         type="text"
+         placeholder="search for a food item..."
+         value="{{description}}"
+         (click)="openModal()">
   <select class="col2" id="measurement-select" name="measurement">
     <option value="volvo">Volvo</option>
     <option value="saab">Saab</option>

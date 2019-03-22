@@ -11,23 +11,15 @@ export class UsdaDbService {
   private baseURL: string;
 
   constructor(private http: Http) {
-    this.baseURL = "https://api.nal.usda.gov/ndb/search/";
+    this.baseURL = "https://api.nal.usda.gov/ndb/";
   }
 
   foodQuery(query: string, maxResults: number = 20) {
-    return this.http.get(`${this.baseURL}?format=json&q=${query}&sort=n&max=${maxResults}&offset=0&ds=Standard Reference&api_key=${usdaApiKey}`);
-
-    // return this.parseFoodResults(response.json());
+    return this.http.get(`${this.baseURL}search/?format=json&q=${query}&sort=r&max=${maxResults}&offset=0&ds=Standard Reference&api_key=${usdaApiKey}`);
   }
 
-  parseFoodResults(response) {
-    // let result = {};
-    // if(response) {
-    //    con
-    //
-    //
-    // }
-    return response;
+  foodReportByNdbno(ndbno: string) {
+    return this.http.get(`${this.baseURL}V2/reports?ndbno=${ndbno}&type=b&format=json&api_key=${usdaApiKey}`);
   }
 
 }

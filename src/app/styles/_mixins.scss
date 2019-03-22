@@ -1,4 +1,5 @@
 
+@import './variables';
 
 @mixin add-item {
   display: flex;
@@ -13,5 +14,17 @@
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+
+@mixin modal-bttn {
+  height: $meal-input-height;
+  background-color: transparent;
+  border: 1px solid $charcoal;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $lightgray;
   }
 }

@@ -1,7 +1,40 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-#description-input {
-  height: $meal-input-height;
+#modal-container {
+  width: 400px;
+}
+
+#search-input {
+  display: flex;
+  align-items: center;
+
+  input {
+    height: $meal-input-height;
+    width: 100%;
+  }
+
+  button {
+    margin: 0 5px;
+    height: $meal-input-height;
+    color: white;
+    background-color: $technipurple;
+    border: 0px solid transparent;
+    border-radius: 3px;
+  }
+}
+
+
+#food-results {
   width: 100%;
+  margin: 10px 0;
+}
+
+#select-bttn {
+  margin-right: 5px;
+  @include modal-bttn;
+}
+
+#close-bttn {
+  @include modal-bttn;
 }

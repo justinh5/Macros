@@ -11,6 +11,9 @@ import { UsdaDbService } from '../../services/usda-db.service';
 })
 export class SearchModalComponent implements OnInit {
 
+  resultList: any;
+  selectedNdbno: string;
+
   constructor(public dialogRef: MatDialogRef<SearchModalComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               private usdaService: UsdaDbService) { }
@@ -18,8 +21,26 @@ export class SearchModalComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchFoods(query: string) {
+    this.usdaService.foodQuery(query).subscribe( response => {
+      let resp = response.json();
+      if(resp && resp.list && resp.list.item) {
+        this.resultList = resp.list.item.map(item => {
+          return {
+            name: item.name,
+            ndbno: item.ndbno
+          };
+        });
+      }
+    });
+  }
+
+  selectItem(id: string) {
+    this.dialogRef.close(id);
+  }
+
   close() {
-    this.dialogRef.close("Thanks for using me!");
+    this.dialogRef.close(null);
   }
 
 }
