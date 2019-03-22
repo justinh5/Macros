@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Meal } from '../models/meal.model';
+import { FoodItem } from '../models/food-item.model';
 import { MealsService } from '../services/meals.service';
 
 @Component({
@@ -15,12 +16,11 @@ export class MealDetailComponent implements OnInit {
   mealId: string;
   displayMeal: Meal;
   addOn: boolean;
-  list: string[];
+  itemList: string[];
 
   constructor(private route: ActivatedRoute,
               private mealService: MealsService) {
     this.addOn = false;
-    this.list = ["cow", "pig", "sheep"];
   }
 
   ngOnInit() {
@@ -35,20 +35,11 @@ export class MealDetailComponent implements OnInit {
 
   addNewItem() {
     this.addOn = true;
-    console.log(this.list);
   }
 
   additionDone() {
     this.addOn = false;
   }
 
-  // removeItem($event) {
-  //   console.log($event.value);
-  //   const index = this.list.indexOf($event.value, 0);
-  //   if (index > -1) {
-  //      this.list.splice(index, 1);
-  //   }
-  //
-  // }
 
 }

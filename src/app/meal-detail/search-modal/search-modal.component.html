@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>This is a Dialog title</h2>
+
+<mat-dialog-content>
+
+  <div id="search-input">
+    <input id="description-input" type="text" placeholder="search for a food item...">
+    <button type="button" name="button">Search</button>
+  </div>
+
+  <select name="food-results" size="10">
+   <option value="volvo">Volvo</option>
+   <option value="saab">Saab</option>
+   <option value="fiat">Fiat</option>
+   <option value="audi">Audi</option>
+   <option value="audi">fdfsd</option>
+   <option value="audi">Au4terterdi</option>
+   <option value="audi">rtertert</option>
+   <option value="audi">oioihjg</option>
+ </select>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button>Select</button>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

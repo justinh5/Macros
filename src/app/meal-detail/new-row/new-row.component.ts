@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SearchModalComponent } from '../search-modal/search-modal.component';
+import { MatDialog, MatDialogConfig } from "@angular/material";
 
 @Component({
   selector: 'app-new-row',
@@ -9,7 +11,11 @@ export class NewRowComponent implements OnInit {
 
   @Output() additionDone = new EventEmitter();
 
-  constructor() { }
+  ndbno: string;
+
+  constructor(private dialog: MatDialog) {
+    this.ndbno = null;
+  }
 
   ngOnInit() {
   }
@@ -20,6 +26,16 @@ export class NewRowComponent implements OnInit {
 
   saveNewItem() {
     this.additionDone.emit();
+  }
+
+  openModal() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = "some dataaa";
+    let dialogRef = this.dialog.open(SearchModalComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(value => {
+      console.log(`Dialog sent: ${value}`);
+    });
   }
 
 }

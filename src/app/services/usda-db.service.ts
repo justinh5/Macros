@@ -14,8 +14,8 @@ export class UsdaDbService {
     this.baseURL = "https://api.nal.usda.gov/ndb/search/";
   }
 
-  foodQuery(query: string, maxResults: number = 10) {
-    // return this.http.get(`${this.baseURL}?format=json&q=${query}&sort=r&max=${maxResults}&offset=0&ds=Standard Reference&api_key=${usdaApiKey}`);
+  foodQuery(query: string, maxResults: number = 20) {
+    return this.http.get(`${this.baseURL}?format=json&q=${query}&sort=n&max=${maxResults}&offset=0&ds=Standard Reference&api_key=${usdaApiKey}`);
 
     // return this.parseFoodResults(response.json());
   }

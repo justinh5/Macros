@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from "@angular/material";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -15,10 +17,10 @@ import { MealsComponent } from './meals/meals.component';
 import { MealDetailComponent } from './meal-detail/meal-detail.component';
 import { EditMealComponent } from './edit-meal/edit-meal.component';
 import { BackBttnComponent } from './meal-detail/back-bttn/back-bttn.component';
-import { SearchFieldComponent } from './meal-detail/search-field/search-field.component';
 import { ItemTableComponent } from './meal-detail/item-table/item-table.component';
 import { AddItemBttnComponent } from './meal-detail/add-item-bttn/add-item-bttn.component';
 import { NewRowComponent } from './meal-detail/new-row/new-row.component';
+import { SearchModalComponent } from './meal-detail/search-modal/search-modal.component';
 
 
 export const firebaseConfig = {
@@ -37,20 +39,23 @@ export const firebaseConfig = {
     EditMealComponent,
     MealDetailComponent,
     BackBttnComponent,
-    SearchFieldComponent,
     ItemTableComponent,
     AddItemBttnComponent,
-    NewRowComponent
+    NewRowComponent,
+    SearchModalComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SearchModalComponent]
 })
 export class AppModule { }

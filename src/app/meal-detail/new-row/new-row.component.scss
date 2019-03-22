@@ -30,6 +30,11 @@
   white-space: nowrap;
 }
 
+#description-input {
+  height: $meal-input-height;
+  width: 100%;
+}
+
 #measurement-select {
   height: $meal-input-height;
   width: 100%;
