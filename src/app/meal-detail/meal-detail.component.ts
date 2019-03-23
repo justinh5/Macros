@@ -16,11 +16,12 @@ export class MealDetailComponent implements OnInit {
   mealId: string;
   displayMeal: Meal;
   addOn: boolean;
-  itemList: string[];
+  itemList: FoodItem[];
 
   constructor(private route: ActivatedRoute,
               private mealService: MealsService) {
     this.addOn = false;
+    this.itemList = [];
   }
 
   ngOnInit() {
@@ -37,8 +38,12 @@ export class MealDetailComponent implements OnInit {
     this.addOn = true;
   }
 
-  additionDone() {
+  additionDone(newItem: FoodItem) {
     this.addOn = false;
+    if(newItem) {
+      this.itemList.push(newItem);
+    }
+    console.log(this.itemList);
   }
 
 

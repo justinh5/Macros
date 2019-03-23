@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { FoodItem } from '../../models/food-item.model';
 
 @Component({
   selector: 'app-item-table',
@@ -7,8 +8,8 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class ItemTableComponent implements OnInit {
 
-  @Input() list: string[];
-  @Output() listChange = new EventEmitter();
+  @Input() itemList: FoodItem[];
+  @Output() itemListChange = new EventEmitter();
 
   constructor() {}
 
@@ -16,15 +17,15 @@ export class ItemTableComponent implements OnInit {
   }
 
   deleteItem() {
-    let value = "cow";
-    if(confirm("Are you sure you want to remove?")) {
-      const index = this.list.indexOf(value, 0);
-        if (index > -1) {
-           this.list.splice(index, 1);
-        }
-      this.listChange.emit(this.list);
-      console.log(this.list);
-    }
+    // let value = "cow";
+    // if(confirm("Are you sure you want to remove?")) {
+    //   const index = this.list.indexOf(value, 0);
+    //     if (index > -1) {
+    //        this.list.splice(index, 1);
+    //     }
+    //   this.listChange.emit(this.list);
+    //   console.log(this.list);
+    // }
   }
 
 

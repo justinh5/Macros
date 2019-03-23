@@ -1,9 +1,10 @@
 
+import { Measurement } from './measurement.model';
 
 export class Nutrition {
   constructor (
-    public energy: number,
-    public fat: number,
-    public carbs: numbers,
-    public protein: number) { }
+    public energy: Measurement[],
+    public fat: Measurement[],
+    public carbs: Measurement[],
+    public protein: Measurement[]) { }
 }

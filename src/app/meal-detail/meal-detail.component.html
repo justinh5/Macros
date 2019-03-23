@@ -3,7 +3,7 @@
 
 <div id="table-container">
   <h1>{{displayMeal?.description}}</h1>
-  <app-item-table [(list)]="list"></app-item-table>
-  <app-new-row *ngIf="addOn" (additionDone)="additionDone()"></app-new-row>
+  <app-item-table [(itemList)]="itemList"></app-item-table>
+  <app-new-row *ngIf="addOn" (additionDone)="additionDone($event)"></app-new-row>
   <app-add-item-bttn (click)="addNewItem()"></app-add-item-bttn>
 </div>

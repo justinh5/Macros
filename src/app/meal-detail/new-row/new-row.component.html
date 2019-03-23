@@ -5,12 +5,15 @@
          value="{{description}}"
          (click)="openModal()">
   <select class="col2" id="measurement-select" name="measurement">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
+    <option *ngFor="let m of measurements" value="m">{{m}}</option>
   </select>
-  <input class="col3" id="qty-input" type="text" value="1">
+  <input #quantity class="col3" id="qty-input" type="text" value="1">
   <div class="col4">
-    <button class="save-bttn" type="button" name="button" (click)="saveNewItem()">Save</button>
-    <button class="cancel-bttn" type="button" name="button" (click)="cancelNewItem()">Cancel</button>
+    <button class="save-bttn"
+            name="button"
+            (click)="saveNewItem(quantity.value)">
+            Save
+    </button>
+    <button class="cancel-bttn" name="button" (click)="cancelNewItem()">Cancel</button>
   </div>
 </div>
