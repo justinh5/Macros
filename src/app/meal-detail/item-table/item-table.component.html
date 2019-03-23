@@ -15,3 +15,5 @@
     </div>
   </div>
 </div>
+<app-new-row *ngIf="addOn" (additionDone)="additionDone($event)"></app-new-row>
+<app-add-item-bttn (click)="addNewItem()"></app-add-item-bttn>

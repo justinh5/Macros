@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meal } from '../models/meal.model';
 import { Router } from '@angular/router';
 import { MealsService } from '../services/meals.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-meals',
@@ -12,8 +13,7 @@ import { MealsService } from '../services/meals.service';
 export class MealsComponent implements OnInit {
 
   selectedMeal;
-  meals: any[];
-  // meals: FirebaseListObservable<any[]>;
+  meals: FirebaseListObservable<any[]>;
   addOn: boolean;
   editOn: boolean;
 
@@ -23,9 +23,7 @@ export class MealsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mealService.getMeals().subscribe(data => {
-      this.meals = data;
-    });
+    this.meals = this.mealService.getMeals();
   }
 
   addNewItem() {

@@ -2,8 +2,6 @@
 <app-back-bttn></app-back-bttn>
 
 <div id="table-container">
-  <h1>{{displayMeal?.description}}</h1>
-  <app-item-table [(itemList)]="itemList"></app-item-table>
-  <app-new-row *ngIf="addOn" (additionDone)="additionDone($event)"></app-new-row>
-  <app-add-item-bttn (click)="addNewItem()"></app-add-item-bttn>
+  <h1>{{mealTitle}}</h1>
+  <app-item-table [mealId]="mealId"></app-item-table>
 </div>

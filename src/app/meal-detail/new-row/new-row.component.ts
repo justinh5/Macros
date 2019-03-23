@@ -32,10 +32,10 @@ export class NewRowComponent {
   }
 
   saveNewItem(qty: string) {
-    console.log('ndbno: ' + this.ndbno);
-    console.log('desc: ' + this.description);
-    console.log('measurement: ' + this.measurement);
-    console.log('qty: ' + qty);
+    // console.log('ndbno: ' + this.ndbno);
+    // console.log('desc: ' + this.description);
+    // console.log('measurement: ' + this.measurement);
+    // console.log('qty: ' + qty);
     if(this.ndbno && this.description !== '' && this.measurement) {
       let newFood = new FoodItem(this.ndbno, this.description, this.measurement, parseFloat(qty), this.nutrition);
       this.additionDone.emit(newFood);

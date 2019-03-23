@@ -14,14 +14,11 @@ import { MealsService } from '../services/meals.service';
 export class MealDetailComponent implements OnInit {
 
   mealId: string;
-  displayMeal: Meal;
-  addOn: boolean;
-  itemList: FoodItem[];
+  mealTitle: string;
 
   constructor(private route: ActivatedRoute,
               private mealService: MealsService) {
-    this.addOn = false;
-    this.itemList = [];
+    this.mealTitle = "";
   }
 
   ngOnInit() {
@@ -29,22 +26,9 @@ export class MealDetailComponent implements OnInit {
       this.mealId = urlParameters['id'];
     });
     this.mealService.getMealById(this.mealId).subscribe(data => {
-      this.displayMeal = data;
+      if(data.description)
+        this.mealTitle = data.description;
     });
-
   }
-
-  addNewItem() {
-    this.addOn = true;
-  }
-
-  additionDone(newItem: FoodItem) {
-    this.addOn = false;
-    if(newItem) {
-      this.itemList.push(newItem);
-    }
-    console.log(this.itemList);
-  }
-
 
 }
