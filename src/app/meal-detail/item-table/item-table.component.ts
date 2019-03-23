@@ -16,16 +16,16 @@ export class ItemTableComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteItem() {
-    // let value = "cow";
-    // if(confirm("Are you sure you want to remove?")) {
-    //   const index = this.list.indexOf(value, 0);
-    //     if (index > -1) {
-    //        this.list.splice(index, 1);
-    //     }
-    //   this.listChange.emit(this.list);
-    //   console.log(this.list);
-    // }
+  deleteItem(ndbno: string) {
+    if(confirm("Are you sure you want to remove?")) {
+      for(let i=0; i<this.itemList.length; ++i) {
+        if(this.itemList[i].ndbno === ndbno) {
+          this.itemList.splice(i, 1);
+          break;
+        }
+      }
+      this.itemListChange.emit(this.itemList);
+    }
   }
 
 

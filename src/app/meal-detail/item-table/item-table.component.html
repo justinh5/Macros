@@ -5,16 +5,13 @@
     <b class="col3">Qty</b>
     <div class="col4"></div>
   </div>
-  <div class="row">
-    <p class="col1">Eggs, whole, fried</p>
-    <p class="col2">large</p>
-    <p class="col3">2</p>
+  <div class="row" *ngFor="let food of itemList">
+    <p class="col1">{{food.description}}</p>
+    <p class="col2">{{food.measurement}}</p>
+    <p class="col3">{{food.qty}}</p>
     <div class="col4 edit-group">
       <img class="edit-icon" src="./assets/images/edit-solid.svg" alt="edit">
-      <img class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete" (click)="deleteItem()">
+      <img class="delete-icon" src="./assets/images/trash-alt-regular.svg" alt="delete" (click)="deleteItem(food.ndbno)">
     </div>
-  </div>
-  <div *ngFor="let animal of list">
-    {{animal}}
   </div>
 </div>
