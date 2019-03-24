@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+#table-container {
+  margin-top: 80px;
+  width: 100%;
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+  }
+
+  #table-header {
+    border-bottom: 2px solid $dark-charcoal;
+  }
+
+  th {
+    text-align: center;
+    padding: 0 50px 5px 50px;
+  }
+
+  td {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 8px 50px 50px 50px;
+  }
+}

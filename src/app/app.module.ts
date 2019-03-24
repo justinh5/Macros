@@ -21,6 +21,7 @@ import { ItemTableComponent } from './meal-detail/item-table/item-table.componen
 import { AddItemBttnComponent } from './meal-detail/add-item-bttn/add-item-bttn.component';
 import { NewRowComponent } from './meal-detail/new-row/new-row.component';
 import { SearchModalComponent } from './meal-detail/search-modal/search-modal.component';
+import { MacroTableComponent } from './meal-detail/macro-table/macro-table.component';
 
 
 export const firebaseConfig = {
@@ -42,7 +43,8 @@ export const firebaseConfig = {
     ItemTableComponent,
     AddItemBttnComponent,
     NewRowComponent,
-    SearchModalComponent
+    SearchModalComponent,
+    MacroTableComponent
   ],
   imports: [
     BrowserModule,

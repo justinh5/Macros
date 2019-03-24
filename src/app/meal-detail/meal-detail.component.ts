@@ -15,10 +15,13 @@ export class MealDetailComponent implements OnInit {
 
   mealId: string;
   mealTitle: string;
+  itemList: FoodItem[];
+
 
   constructor(private route: ActivatedRoute,
               private mealService: MealsService) {
     this.mealTitle = "";
+    this.itemList = [];
   }
 
   ngOnInit() {
