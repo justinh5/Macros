@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import { Meal } from '../models/meal.model';
 import { FoodItem } from '../models/food-item.model';
 import { MealsService } from '../services/meals.service';
@@ -15,7 +14,7 @@ export class MealDetailComponent implements OnInit {
 
   mealId: string;
   mealTitle: string;
-  itemList: FoodItem[];
+  itemList: any[];
 
 
   constructor(private route: ActivatedRoute,
@@ -32,6 +31,11 @@ export class MealDetailComponent implements OnInit {
       if(data.description)
         this.mealTitle = data.description;
     });
+    // this.mealService.getItemsById(this.mealId).subscribe(data => {
+    //   if(data.items) {
+    //     this.itemList = data.items;
+    //   }
+    // });
   }
 
 }

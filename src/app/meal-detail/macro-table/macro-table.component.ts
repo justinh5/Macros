@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { FoodItem } from '../../models/food-item.model';
 
 @Component({
@@ -6,9 +6,9 @@ import { FoodItem } from '../../models/food-item.model';
   templateUrl: './macro-table.component.html',
   styleUrls: ['./macro-table.component.scss']
 })
-export class MacroTableComponent implements OnInit {
+export class MacroTableComponent {
 
-  @Input() itemList: FoodItem[];
+  @Input() itemList: any[];
 
   calories: number;
   fat: number;
@@ -17,10 +17,6 @@ export class MacroTableComponent implements OnInit {
 
   constructor() {
     this.zeroSums();
-  }
-
-  ngOnInit() {
-    this.updateNutrition();
   }
 
   ngOnChanges(changes) {

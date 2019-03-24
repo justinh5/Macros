@@ -25,6 +25,7 @@ export class NewRowComponent {
   constructor(private dialog: MatDialog, private usdaService: UsdaDbService) {
     this.ndbno = null;
     this.description = '';
+
   }
 
   cancelNewItem() {
@@ -48,9 +49,10 @@ export class NewRowComponent {
     let dialogRef = this.dialog.open(SearchModalComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(id => {
-      if(id)
+      if(id) {
         this.ndbno = id;
         this.populateRow(id);
+      }
     });
   }
 

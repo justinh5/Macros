@@ -44,7 +44,3 @@ export class SearchModalComponent implements OnInit {
   }
 
 }
-
-
-
-// public dialogRef: MatDialogRef<SearchModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any
