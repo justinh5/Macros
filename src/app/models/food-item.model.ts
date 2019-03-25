@@ -5,6 +5,7 @@ export class FoodItem {
     public ndbno: string,
     public description: string,
     public measurement: string,
+    public measurements: string[],
     public qty: number,
     public nutrition: Nutrition) { }
 }

@@ -11,14 +11,17 @@ import { MealsService } from '../../services/meals.service';
 export class ItemTableComponent implements OnInit {
 
   @Input() mealId;
-  @Input() itemList: any[];
   @Output() itemListChange = new EventEmitter();
 
+  itemList: any[];
   editOn: boolean;
+  editNdbno: string;
   addOn: boolean;
 
   constructor(private mealService: MealsService) {
     this.addOn = false;
+    this.editOn = false;
+    this.itemList = [];
   }
 
   ngOnInit() {
@@ -37,15 +40,37 @@ export class ItemTableComponent implements OnInit {
   }
 
   additionDone(newItem: FoodItem) {
-    this.addOn = false;
     if(newItem) {
       this.itemList.push(newItem);
       this.updateMeal();
     }
+    this.addOn = false;
   }
 
   updateItem(ndbno: string) {
     this.editOn = true;
+    this.editNdbno = ndbno;
+  }
+
+  editDone(newItem: FoodItem) {
+    if(newItem) {
+      this.itemList.forEach(item => {
+        if(item.ndbno === newItem.ndbno) {
+          this.copyItem(item, newItem);
+        }
+      });
+      this.updateMeal();
+    }
+    this.editOn = false;
+    this.editNdbno = null;
+  }
+
+  copyItem(oldItem: any, newItem: any) {
+    oldItem.description = newItem.description;
+    oldItem.measurement = newItem.measurement;
+    oldItem.measurements = newItem.measurements;
+    oldItem.qty = newItem.qty;
+    oldItem.nutrition = newItem.nutrition;
   }
 
   deleteItem(ndbno: string) {
@@ -61,8 +86,8 @@ export class ItemTableComponent implements OnInit {
   }
 
   updateMeal() {
+    this.mealService.updateFoodItems(this.mealId, this.itemList);
     setTimeout(() => {
-      this.mealService.updateFoodItems(this.mealId, this.itemList);
       this.itemListChange.emit(this.itemList);
     });
   }

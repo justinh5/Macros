@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { SearchModalComponent } from '../search-modal/search-modal.component';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { UsdaDbService } from '../../services/usda-db.service';
@@ -14,32 +14,49 @@ import { Measurement } from '../../models/measurement.model';
 })
 export class NewRowComponent {
 
+  @Input() addOn: boolean;
+  @Input() editOn: boolean;
+  @Input() set editItem(item: any) {
+    this.ndbno = item.ndbno;
+    this.description = item.description;
+    this.measurement = item.measurement;
+    this.measurements = item.measurements;
+    this.qty = item.qty;
+    this.nutrition = item.nutrition;
+  };
+
   @Output() additionDone = new EventEmitter();
+  @Output() editDone = new EventEmitter();
 
   description: string;
   measurement: string;
   measurements: string[];
+  qty: string;
   ndbno: string;
   nutrition: Nutrition;
 
   constructor(private dialog: MatDialog, private usdaService: UsdaDbService) {
     this.ndbno = null;
     this.description = '';
-
+    this.measurements = [];
+    this.qty = "1";
   }
 
   cancelNewItem() {
     this.additionDone.emit(null);
+    this.editDone.emit(null);
+    console.log(this.ndbno);
   }
 
   saveNewItem(qty: string) {
-    // console.log('ndbno: ' + this.ndbno);
-    // console.log('desc: ' + this.description);
-    // console.log('measurement: ' + this.measurement);
-    // console.log('qty: ' + qty);
     if(this.ndbno && this.description !== '' && this.measurement) {
-      let newFood = new FoodItem(this.ndbno, this.description, this.measurement, parseFloat(qty), this.nutrition);
-      this.additionDone.emit(newFood);
+      let newFood = new FoodItem(this.ndbno, this.description, this.measurement, this.measurements, parseFloat(qty), this.nutrition);
+      if(this.addOn === true) {
+        this.additionDone.emit(newFood);
+      }
+      else {
+        this.editDone.emit(newFood);
+      }
     }
   }
 
@@ -54,6 +71,11 @@ export class NewRowComponent {
         this.populateRow(id);
       }
     });
+  }
+
+  onChange(selection: any) {
+    console.log(selection);
+    this.measurement = selection;
   }
 
   populateRow(ndbno: string) {

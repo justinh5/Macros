@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Meal } from '../models/meal.model';
 import { FoodItem } from '../models/food-item.model';
@@ -14,13 +14,13 @@ export class MealDetailComponent implements OnInit {
 
   mealId: string;
   mealTitle: string;
-  itemList: any[];
+
+  @ViewChild('macroTable') macroTable;
 
 
   constructor(private route: ActivatedRoute,
               private mealService: MealsService) {
     this.mealTitle = "";
-    this.itemList = [];
   }
 
   ngOnInit() {
@@ -31,11 +31,11 @@ export class MealDetailComponent implements OnInit {
       if(data.description)
         this.mealTitle = data.description;
     });
-    // this.mealService.getItemsById(this.mealId).subscribe(data => {
-    //   if(data.items) {
-    //     this.itemList = data.items;
-    //   }
-    // });
+
+  }
+
+  updateTable(list: any[]){
+    this.macroTable.updateNutrition(list);
   }
 
 }

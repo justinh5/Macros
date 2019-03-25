@@ -4,10 +4,10 @@
          placeholder="search for a food item..."
          value="{{description}}"
          (click)="openModal()">
-  <select class="col2" id="measurement-select" name="measurement">
-    <option *ngFor="let m of measurements" value="m">{{m}}</option>
+  <select class="col2" id="measurement-select" (change)="onChange($event.target.value)">
+    <option *ngFor="let m of measurements" [selected]="m === measurement" value="{{m}}">{{m}}</option>
   </select>
-  <input #quantity class="col3" id="qty-input" type="text" value="1">
+  <input #quantity class="col3" id="qty-input" type="text" value="{{qty}}">
   <div class="col4">
     <button class="save-bttn"
             name="button"
