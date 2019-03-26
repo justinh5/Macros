@@ -1,14 +1,39 @@
 # Macros
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+A sample CRUD Angular app for tracking personal dietary macronutrients.
 
-## Development server
+See demo [here](https://macros-f17e6.firebaseapp.com/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![screenshot](screenshot.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development Setup
+
+1. Create a new [Firebase](https://firebase.google.com/) project and store configuration details in the file src/app/api-keys.ts in the following format:
+
+```
+export const masterFirebaseConfig = {
+  apiKey: "...",
+  authDomain: "...",
+  databaseURL: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "..."
+};
+```
+
+2. Obtain a USDA Food Composition API key and store in the same file:
+
+```
+export const usdaApiKey = "...";
+```
+
+3. Run the dev server and navigate to `http://localhost:4200/`:
+
+```
+ng serve --open
+```
+
 
 ## Build
 
@@ -18,10 +43,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## TODO Features
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Individual user accounts
+* Drag and drop file tree structure
+* USDA food composition database browser
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project is licensed under the MIT License.
