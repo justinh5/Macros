@@ -33,3 +33,26 @@ a {
   color: white;
   width: 1.5em;
 }
+
+#nav-toggle {
+  display: none;
+  margin-right: 10px;
+  cursor: pointer;
+
+  .hamburger {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  #nav-links {
+    display: none;
+  }
+  #nav-toggle {
+    display: block;
+  }
+}
