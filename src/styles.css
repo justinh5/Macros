@@ -1,6 +1,4 @@
 
-/* $fa-font-path: "../node_modules/font-awesome/fonts"; */
-@import "../node_modules/font-awesome/css/font-awesome.min.css";
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
