@@ -1,6 +1,6 @@
 # Macros
 
-A sample CRUD Angular app for tracking personal dietary macronutrients.
+A sample CRUD Angular app for tracking personal dietary macronutrients. Nutrition data is sourced from the [USDA Food Composition Databases](https://ndb.nal.usda.gov/ndb/search/list?home=true).
 
 See demo [here](https://macros-f17e6.firebaseapp.com/)
 
