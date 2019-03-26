@@ -7,11 +7,10 @@
   color: $dark-charcoal;
   background-color: transparent;
   border: 2px solid transparent;
-  position: absolute;
-  top: 10%;
-  left: 3%;
   display: flex;
   align-items: center;
+  margin-top: 40px;
+  margin-left: -10%;
 
   &:hover {
     cursor: pointer;
@@ -21,5 +20,14 @@
 
 #back-arrow {
   width: 25px;
-  padding: 10px;
+  padding-right: 10px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+  #back-bttn {
+    margin-left: 20px;
+  }
+
 }

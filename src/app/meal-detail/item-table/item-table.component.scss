@@ -7,6 +7,9 @@
     flex-basis: 45%;
     text-align: left;
     padding-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .col2 {
     flex-basis: 25%;
@@ -69,4 +72,12 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+@media screen and (max-width: 800px) {
+
+  #add-item {
+    margin-left: 20px;
+  }
+
 }
