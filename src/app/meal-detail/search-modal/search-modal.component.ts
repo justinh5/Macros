@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef } from "@angular/material";
 import { MAT_DIALOG_DATA } from "@angular/material";
 import { UsdaDbService } from '../../services/usda-db.service';
@@ -9,7 +9,7 @@ import { UsdaDbService } from '../../services/usda-db.service';
   styleUrls: ['./search-modal.component.scss'],
   providers: [UsdaDbService]
 })
-export class SearchModalComponent implements OnInit {
+export class SearchModalComponent {
 
   resultList: any;
   selectedNdbno: string;
@@ -18,12 +18,9 @@ export class SearchModalComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public data: any,
               private usdaService: UsdaDbService) { }
 
-  ngOnInit() {
-  }
-
   searchFoods(query: string) {
     this.usdaService.foodQuery(query).subscribe( response => {
-      let resp = response.json();
+      let resp = response;
       if(resp && resp.list && resp.list.item) {
         this.resultList = resp.list.item.map(item => {
           return {

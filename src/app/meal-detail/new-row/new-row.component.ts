@@ -45,7 +45,6 @@ export class NewRowComponent {
   cancelNewItem() {
     this.additionDone.emit(null);
     this.editDone.emit(null);
-    console.log(this.ndbno);
   }
 
   saveNewItem(qty: string) {
@@ -62,7 +61,6 @@ export class NewRowComponent {
 
   openModal() {
     const dialogConfig = new MatDialogConfig();
-    // dialogConfig.data = "some dataaa";
     let dialogRef = this.dialog.open(SearchModalComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(id => {
@@ -74,14 +72,13 @@ export class NewRowComponent {
   }
 
   onChange(selection: any) {
-    console.log(selection);
     this.measurement = selection;
   }
 
   populateRow(ndbno: string) {
 
     this.usdaService.foodReportByNdbno(ndbno).subscribe(response => {
-      let resp = response.json();
+      let resp = response;
       this.description = resp.foods[0].food.desc.name;
       this.measurement = resp.foods[0].food.nutrients[0].measures[0].label;
       this.measurements = resp.foods[0].food.nutrients[0].measures.map(data => data.label);

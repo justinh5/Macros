@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Meal } from '../models/meal.model';
-import { FoodItem } from '../models/food-item.model';
 import { MealsService } from '../services/meals.service';
 
 @Component({

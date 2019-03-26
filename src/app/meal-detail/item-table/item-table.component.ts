@@ -34,7 +34,6 @@ export class ItemTableComponent implements OnInit {
     });
   }
 
-
   addNewItem() {
     this.addOn = true;
   }
@@ -87,9 +86,7 @@ export class ItemTableComponent implements OnInit {
 
   updateMeal() {
     this.mealService.updateFoodItems(this.mealId, this.itemList);
-    setTimeout(() => {
-      this.itemListChange.emit(this.itemList);
-    });
+    this.itemListChange.emit(this.itemList);
   }
 
 
